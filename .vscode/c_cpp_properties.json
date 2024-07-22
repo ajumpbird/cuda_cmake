@@ -4,7 +4,8 @@
             "name": "Win32",
             "includePath": [
                 "${default}",
-                "${workspaceFolder}/01_fan_fbp/include",
+                // "${workspaceFolder}/01_fan_fbp/include",
+                "${workspaceFolder}/02_fan_fbp/include"
             ],
             "defines": [
                 "_DEBUG",

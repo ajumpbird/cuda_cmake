@@ -13,3 +13,5 @@ cmake -B build -S .
 cmake --build .\build\
 .\build\Debug\app.exe
 ```
+
+> 由于不同文件夹下的include文件夹包含同名文件，在运行某个文件夹中的代码时，最好将c_cpp_properties.json中的其他include注释掉，防止vscode报错，但这并不是代码本事错误，仍可以运行。
