@@ -10,7 +10,7 @@ void recImg(float *d_pws, cufftComplex *H, float *d_rec_img, Geo geo)
 {
     // 当前角度下的投影数据
     cufftComplex *d_proj;
-    cudaMalloc((void **)&d_proj, (geo.detector_num / 2 + 1) * sizeof(cufftComplex));
+    cudaMalloc((void **)&d_proj, (geo.padding_num / 2 + 1) * sizeof(cufftComplex));
     cufftReal *d_real_proj;
     cudaMalloc((void **)&d_real_proj, geo.padding_num * sizeof(cufftReal));
     cufftReal *h_real_proj = new cufftReal[geo.padding_num];
