@@ -5,6 +5,7 @@
 #include "kernel.h"
 
 using namespace cv;
+using namespace std;
 
 void recImg(float *d_pws, cufftComplex *H, float *d_rec_img, Geo geo)
 {
@@ -117,7 +118,7 @@ void padData(cufftReal *input, int original_length, int padded_length)
     }
 }
 
-void showImg(float *img, int rows, int cols, const char *winname, int resized_rows, int resized_cols)
+void showImg(float *img, int rows, int cols, const char *winname, int resized_rows, int resized_cols, string save_name)
 {
     Mat image(rows, cols, CV_32FC1, img);
     Mat normalized_image;
@@ -126,6 +127,11 @@ void showImg(float *img, int rows, int cols, const char *winname, int resized_ro
     Mat resized_image;
     resize(normalized_image, resized_image, target_size);
     imshow(winname, resized_image);
+    // 保存图像
+    if (save_name != "")
+    {
+        imwrite(save_name, resized_image * 255);
+    }
     waitKey(0);
 }
 

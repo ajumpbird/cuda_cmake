@@ -57,7 +57,7 @@ int main()
     dim3 grid((geo.detector_num + block.x - 1) / block.x, (geo.views + block.y - 1) / block.y);
     getSino<<<grid, block>>>(d_sino, geo, texObj);
     cudaMemcpy(h_sino, d_sino, sino_size * sizeof(float), cudaMemcpyDeviceToHost);
-    // showImg(h_sino, geo.views, geo.detector_num, "Sinogram", 512, 512);
+    showImg(h_sino, geo.views, geo.detector_num, "Sinogram", 512, 512, "data/sino.png");
 
     // 得到填充加权 sino
     int pws_size = geo.views * geo.padding_num;

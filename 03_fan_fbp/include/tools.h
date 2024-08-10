@@ -3,6 +3,9 @@
 
 #include <cufft.h>
 #include <cuda_runtime.h>
+#include <string>
+
+using namespace std;
 
 struct Geo
 {
@@ -30,7 +33,7 @@ void readFile(const char *filename, float *data, int length);
 
 void padData(cufftReal *input, int original_length, int padded_length);
 
-void showImg(float *img, int rows, int cols, const char *winname, int resized_rows, int resized_cols);
+void showImg(float *img, int rows, int cols, const char *winname, int resized_rows, int resized_cols, string save_name = "");
 
 cudaTextureObject_t bindTexObj(cudaArray *cuArray, float *array, int width, int height);
 

@@ -6,8 +6,8 @@
                 "${default}",
                 // "${workspaceFolder}/01_fan_fbp/include",
                 // "${workspaceFolder}/02_fan_fbp/include",
-                // "${workspaceFolder}/03_fan_fbp/include",
-                "${workspaceFolder}/04_conv/include"
+                "${workspaceFolder}/03_fan_fbp/include"
+                // "${workspaceFolder}/04_conv/include"
             ],
             "defines": [
                 "_DEBUG",
